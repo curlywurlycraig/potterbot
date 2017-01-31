@@ -1,6 +1,9 @@
+from __future__ import print_function
+
 import glob
 import random
 import math
+
 from nltk.tokenize import word_tokenize
 from collections import Counter, defaultdict
 
@@ -8,12 +11,12 @@ filenames = glob.glob("*.srt")
 
 language_model = defaultdict(Counter)
 
-print "welcome to the harry potter character emulator"
+print("welcome to the harry potter character emulator")
 
-print "training language model"
+print("training language model")
 for filename in filenames:
     with open(filename) as f:
-        print "Reading lines from {}...".format(filename)
+        print("Reading lines from {}...".format(filename))
 
         # all lines not beginning with a number are dialog lines
         for line in f:
@@ -56,7 +59,7 @@ def generate_sentence():
     return result
 
 # generate 10 sentences
-print
+print()
 for i in range(10):
-    print "Potterbot: {}".format(generate_sentence())
+    print("Potterbot: {}".format(generate_sentence()))
 
